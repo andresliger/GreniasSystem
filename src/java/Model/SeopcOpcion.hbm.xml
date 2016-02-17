@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SeopcOpcion" table="seopc_opcion" catalog="greniasdb" optimistic-lock="version">
+        <id name="seopcCodopc" type="java.lang.Integer">
+            <column name="SEOPC_CODOPC" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="seopcOpcion" class="Model.SeopcOpcion" fetch="select">
+            <column name="SEO_SEOPC_CODOPC" />
+        </many-to-one>
+        <many-to-one name="sesisSistem" class="Model.SesisSistem" fetch="select">
+            <column name="SESIS_CODSIS" />
+        </many-to-one>
+        <many-to-one name="sevenVentan" class="Model.SevenVentan" fetch="select">
+            <column name="CODIGO_VENTANA" />
+        </many-to-one>
+        <property name="seopcNomopc" type="string">
+            <column name="SEOPC_NOMOPC" length="128" not-null="true" />
+        </property>
+        <property name="seopcDesopc" type="string">
+            <column name="SEOPC_DESOPC" length="256" />
+        </property>
+        <set name="seopcOpcions" table="seopc_opcion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEO_SEOPC_CODOPC" />
+            </key>
+            <one-to-many class="Model.SeopcOpcion" />
+        </set>
+        <set name="seoppOpcpers" table="seopp_opcper" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEOPC_CODOPC" not-null="true" />
+            </key>
+            <one-to-many class="Model.SeoppOpcper" />
+        </set>
+        <set name="sevenVentans" table="seven_ventan" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEOPC_CODOPC" />
+            </key>
+            <one-to-many class="Model.SevenVentan" />
+        </set>
+    </class>
+</hibernate-mapping>

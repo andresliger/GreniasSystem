@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.PeempEmplea" table="peemp_emplea" catalog="greniasdb" optimistic-lock="version">
+        <id name="peempNumemp" type="java.lang.Integer">
+            <column name="PEEMP_NUMEMP" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="seusuUsuari" class="Model.SeusuUsuari" fetch="select">
+            <column name="SEUSU_NOMBRE" length="32" not-null="true" />
+        </many-to-one>
+        <property name="peempNomemp" type="string">
+            <column name="PEEMP_NOMEMP" length="32" not-null="true">
+                <comment>Nombre del vendedor.</comment>
+            </column>
+        </property>
+        <property name="peempEdaemp" type="int">
+            <column name="PEEMP_EDAEMP" not-null="true">
+                <comment>Edad del vendedor.</comment>
+            </column>
+        </property>
+        <property name="peempSalemp" type="big_decimal">
+            <column name="PEEMP_SALEMP" precision="5" not-null="true">
+                <comment>Salario o remuneraci</comment>
+            </column>
+        </property>
+        <property name="peempComemp" type="big_decimal">
+            <column name="PEEMP_COMEMP" precision="3" not-null="true">
+                <comment>Comisi</comment>
+            </column>
+        </property>
+        <property name="peempOfiemp" type="string">
+            <column name="PEEMP_OFIEMP" length="32">
+                <comment>N</comment>
+            </column>
+        </property>
+        <property name="peempTelemp" type="string">
+            <column name="PEEMP_TELEMP" length="16">
+                <comment>Tel</comment>
+            </column>
+        </property>
+        <property name="peempCelemp" type="string">
+            <column name="PEEMP_CELEMP" length="16">
+                <comment>Tel</comment>
+            </column>
+        </property>
+        <property name="peempEmaemp" type="string">
+            <column name="PEEMP_EMAEMP" length="32">
+                <comment>Correo electr</comment>
+            </column>
+        </property>
+        <property name="peempIndtyp" type="java.lang.Integer">
+            <column name="PEEMP_INDTYP" />
+        </property>
+        <set name="pevntVentases" table="pevnt_ventas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PEEMP_NUMEMP" not-null="true">
+                    <comment>C</comment>
+                </column>
+            </key>
+            <one-to-many class="Model.PevntVentas" />
+        </set>
+        <set name="seusuUsuaris" table="seusu_usuari" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PEEMP_NUMEMP">
+                    <comment>C</comment>
+                </column>
+            </key>
+            <one-to-many class="Model.SeusuUsuari" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.PevntVentas" table="pevnt_ventas" catalog="greniasdb" optimistic-lock="version">
+        <id name="pevntNumord" type="java.lang.Integer">
+            <column name="PEVNT_NUMORD" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pecliCliente" class="Model.PecliCliente" fetch="select">
+            <column name="PECLI_NUMCLI" not-null="true">
+                <comment>C</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="peempEmplea" class="Model.PeempEmplea" fetch="select">
+            <column name="PEEMP_NUMEMP" not-null="true">
+                <comment>C</comment>
+            </column>
+        </many-to-one>
+        <property name="pevntTotven" type="big_decimal">
+            <column name="PEVNT_TOTVEN" precision="12" not-null="true" />
+        </property>
+        <property name="pevntDirent" type="string">
+            <column name="PEVNT_DIRENT" length="64" not-null="true" />
+        </property>
+        <property name="pevntFecpag" type="date">
+            <column name="PEVNT_FECPAG" length="10" not-null="true" />
+        </property>
+        <property name="pevntTippag" type="string">
+            <column name="PEVNT_TIPPAG" length="16" not-null="true">
+                <comment>Tipo de pago puede ser: EFECTIVO o TARJETA</comment>
+            </column>
+        </property>
+        <property name="pevntTipven" type="string">
+            <column name="PEVNT_TIPVEN" length="16" not-null="true">
+                <comment>Tipo de venta puede ser: COMISION o ENCARGO.</comment>
+            </column>
+        </property>
+        <set name="pedets" table="pedet" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PEVNT_NUMORD" not-null="true">
+                    <comment>C</comment>
+                </column>
+            </key>
+            <one-to-many class="Model.Pedet" />
+        </set>
+    </class>
+</hibernate-mapping>

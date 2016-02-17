@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SesisSistem" table="sesis_sistem" catalog="greniasdb" optimistic-lock="version">
+        <id name="sesisCodsis" type="java.lang.Integer">
+            <column name="SESIS_CODSIS" />
+            <generator class="identity" />
+        </id>
+        <property name="sesisDessis" type="string">
+            <column name="SESIS_DESSIS" length="256" not-null="true" />
+        </property>
+        <property name="sesisEstsis" type="boolean">
+            <column name="SESIS_ESTSIS" not-null="true" />
+        </property>
+        <set name="seopcOpcions" table="seopc_opcion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SESIS_CODSIS" />
+            </key>
+            <one-to-many class="Model.SeopcOpcion" />
+        </set>
+    </class>
+</hibernate-mapping>

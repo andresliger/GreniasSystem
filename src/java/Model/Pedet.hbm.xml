@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Pedet" table="pedet" catalog="greniasdb" optimistic-lock="version">
+        <composite-id name="id" class="Model.PedetId">
+            <key-property name="peartNumart" type="int">
+                <column name="PEART_NUMART" />
+            </key-property>
+            <key-property name="pevntNumord" type="int">
+                <column name="PEVNT_NUMORD" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="peartArticulo" class="Model.PeartArticulo" update="false" insert="false" fetch="select">
+            <column name="PEART_NUMART" not-null="true">
+                <comment>C</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="pevntVentas" class="Model.PevntVentas" update="false" insert="false" fetch="select">
+            <column name="PEVNT_NUMORD" not-null="true">
+                <comment>C</comment>
+            </column>
+        </many-to-one>
+        <property name="pedetCant" type="int">
+            <column name="PEDET_CANT" not-null="true">
+                <comment>Cantidad de art</comment>
+            </column>
+        </property>
+        <property name="pedetTotite" type="big_decimal">
+            <column name="PEDET_TOTITE" precision="10" not-null="true">
+                <comment>Total monetario que le corresponde al art</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

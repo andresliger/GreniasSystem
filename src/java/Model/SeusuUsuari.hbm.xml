@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SeusuUsuari" table="seusu_usuari" catalog="greniasdb" optimistic-lock="version">
+        <id name="seusuNombre" type="string">
+            <column name="SEUSU_NOMBRE" length="32" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="peempEmplea" class="Model.PeempEmplea" fetch="select">
+            <column name="PEEMP_NUMEMP">
+                <comment>C</comment>
+            </column>
+        </many-to-one>
+        <property name="seusuPasswd" type="string">
+            <column name="SEUSU_PASSWD" length="32" not-null="true" />
+        </property>
+        <property name="seusuFirmae" type="string">
+            <column name="SEUSU_FIRMAE" length="32" />
+        </property>
+        <property name="seusuUltcmb" type="timestamp">
+            <column name="SEUSU_ULTCMB" length="19" />
+        </property>
+        <property name="seusuCreaci" type="timestamp">
+            <column name="SEUSU_CREACI" length="19" not-null="true" />
+        </property>
+        <property name="seusuLogged" type="boolean">
+            <column name="SEUSU_LOGGED" not-null="true"/>
+        </property>
+        <set name="peempEmpleas" table="peemp_emplea" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEUSU_NOMBRE" length="32" not-null="true" />
+            </key>
+            <one-to-many class="Model.PeempEmplea" />
+        </set>
+        <set name="seuxpUsxpers" table="seuxp_usxper" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEUSU_NOMBRE" length="32" not-null="true" />
+            </key>
+            <one-to-many class="Model.SeuxpUsxper" />
+        </set>
+    </class>
+</hibernate-mapping>

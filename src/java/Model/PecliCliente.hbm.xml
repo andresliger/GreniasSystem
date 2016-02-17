@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.PecliCliente" table="pecli_cliente" catalog="greniasdb" optimistic-lock="version">
+        <id name="pecliNumcli" type="java.lang.Integer">
+            <column name="PECLI_NUMCLI" />
+            <generator class="identity" />
+        </id>
+        <property name="pecliNomcli" type="string">
+            <column name="PECLI_NOMCLI" length="32" not-null="true">
+                <comment>Nombre correspondiente al cliente</comment>
+            </column>
+        </property>
+        <property name="pecliCitcli" type="string">
+            <column name="PECLI_CITCLI" length="16" not-null="true">
+                <comment>Ciudad de referencia del cliente. Es decir la ciudad donde reside</comment>
+            </column>
+        </property>
+        <property name="pecliDescli" type="big_decimal">
+            <column name="PECLI_DESCLI" precision="4">
+                <comment>Descuento que le coresponde al cliente en sus ventas.</comment>
+            </column>
+        </property>
+        <property name="pecliIndtyp" type="java.lang.Integer">
+            <column name="PECLI_INDTYP">
+                <comment>Tipo industrial del cliente.</comment>
+            </column>
+        </property>
+        <set name="pevntVentases" table="pevnt_ventas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PECLI_NUMCLI" not-null="true">
+                    <comment>C</comment>
+                </column>
+            </key>
+            <one-to-many class="Model.PevntVentas" />
+        </set>
+    </class>
+</hibernate-mapping>

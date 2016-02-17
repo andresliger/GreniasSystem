@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SeperPerfil" table="seper_perfil" catalog="greniasdb" optimistic-lock="version">
+        <id name="seperCodper" type="java.lang.Integer">
+            <column name="SEPER_CODPER" />
+            <generator class="identity" />
+        </id>
+        <property name="seperNomper" type="string">
+            <column name="SEPER_NOMPER" length="32" not-null="true" />
+        </property>
+        <property name="seperDesper" type="string">
+            <column name="SEPER_DESPER" length="256" />
+        </property>
+        <set name="seoppOpcpers" table="seopp_opcper" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEPER_CODPER" not-null="true" />
+            </key>
+            <one-to-many class="Model.SeoppOpcper" />
+        </set>
+        <set name="seuxpUsxpers" table="seuxp_usxper" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SEPER_CODPER" not-null="true" />
+            </key>
+            <one-to-many class="Model.SeuxpUsxper" />
+        </set>
+    </class>
+</hibernate-mapping>

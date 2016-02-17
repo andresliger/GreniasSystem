@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SepriPrivil" table="sepri_privil" catalog="greniasdb" optimistic-lock="version">
+        <composite-id name="id" class="Model.SepriPrivilId">
+            <key-property name="seperCodper" type="int">
+                <column name="SEPER_CODPER" />
+            </key-property>
+            <key-property name="seopcCodopc" type="int">
+                <column name="SEOPC_CODOPC" />
+            </key-property>
+        </composite-id>
+        <one-to-one name="seoppOpcper" class="Model.SeoppOpcper" constrained="true"></one-to-one>
+        <property name="sepriInsert" type="boolean">
+            <column name="SEPRI_INSERT" not-null="true" />
+        </property>
+        <property name="sepriModifi" type="boolean">
+            <column name="SEPRI_MODIFI" not-null="true" />
+        </property>
+        <property name="sepriElimin" type="boolean">
+            <column name="SEPRI_ELIMIN" not-null="true" />
+        </property>
+        <property name="sepriConsul" type="boolean">
+            <column name="SEPRI_CONSUL" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

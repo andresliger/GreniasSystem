@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SeuxpUsxper" table="seuxp_usxper" catalog="greniasdb" optimistic-lock="version">
+        <composite-id name="id" class="Model.SeuxpUsxperId">
+            <key-property name="seusuNombre" type="string">
+                <column name="SEUSU_NOMBRE" length="32" />
+            </key-property>
+            <key-property name="seperCodper" type="int">
+                <column name="SEPER_CODPER" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="seperPerfil" class="Model.SeperPerfil" update="false" insert="false" fetch="select">
+            <column name="SEPER_CODPER" not-null="true" />
+        </many-to-one>
+        <many-to-one name="seusuUsuari" class="Model.SeusuUsuari" update="false" insert="false" fetch="select">
+            <column name="SEUSU_NOMBRE" length="32" not-null="true" />
+        </many-to-one>
+        <property name="fechaDeAsignacion" type="timestamp">
+            <column name="FECHA_DE_ASIGNACION" length="19" not-null="true" />
+        </property>
+        <property name="motivoUsuPer" type="string">
+            <column name="MOTIVO_USU_PER" length="256" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

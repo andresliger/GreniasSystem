@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.SeoppOpcper" table="seopp_opcper" catalog="greniasdb" optimistic-lock="version">
+        <composite-id name="id" class="Model.SeoppOpcperId">
+            <key-property name="seperCodper" type="int">
+                <column name="SEPER_CODPER" />
+            </key-property>
+            <key-property name="seopcCodopc" type="int">
+                <column name="SEOPC_CODOPC" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="seopcOpcion" class="Model.SeopcOpcion" update="false" insert="false" fetch="select">
+            <column name="SEOPC_CODOPC" not-null="true" />
+        </many-to-one>
+        <many-to-one name="seperPerfil" class="Model.SeperPerfil" update="false" insert="false" fetch="select">
+            <column name="SEPER_CODPER" not-null="true" />
+        </many-to-one>
+        <property name="seoppFecasi" type="timestamp">
+            <column name="SEOPP_FECASI" length="19" not-null="true" />
+        </property>
+        <property name="seoppEstad" type="boolean">
+            <column name="SEOPP_ESTAD" not-null="true" />
+        </property>
+        <!--one-to-one name="sepriPrivil" class="Model.SepriPrivil"></one-to-one-->
+    </class>
+</hibernate-mapping>

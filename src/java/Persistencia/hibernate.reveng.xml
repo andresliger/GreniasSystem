@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="greniasdb"/>
+  <table-filter match-name="seopp_opcper"/>
+  <table-filter match-name="pevnt_ventas"/>
+  <table-filter match-name="sepri_privil"/>
+  <table-filter match-name="sesis_sistem"/>
+  <table-filter match-name="seopc_opcion"/>
+  <table-filter match-name="seusu_usuari"/>
+  <table-filter match-name="seuxp_usxper"/>
+  <table-filter match-name="pecli_cliente"/>
+  <table-filter match-name="seven_ventan"/>
+  <table-filter match-name="peart_articulo"/>
+  <table-filter match-name="peemp_emplea"/>
+  <table-filter match-name="seper_perfil"/>
+  <table-filter match-name="pedet"/>
+</hibernate-reverse-engineering>
