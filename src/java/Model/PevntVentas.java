@@ -1,5 +1,5 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -21,7 +21,7 @@ public class PevntVentas  implements java.io.Serializable {
      private Date pevntFecpag;
      private String pevntTippag;
      private String pevntTipven;
-     private Set<Pedet> pedets = new HashSet<Pedet>(0);
+     private Set<PedetDetalle> pedetDetalles = new HashSet<PedetDetalle>(0);
 
     public PevntVentas() {
     }
@@ -36,7 +36,7 @@ public class PevntVentas  implements java.io.Serializable {
         this.pevntTippag = pevntTippag;
         this.pevntTipven = pevntTipven;
     }
-    public PevntVentas(PecliCliente pecliCliente, PeempEmplea peempEmplea, BigDecimal pevntTotven, String pevntDirent, Date pevntFecpag, String pevntTippag, String pevntTipven, Set<Pedet> pedets) {
+    public PevntVentas(PecliCliente pecliCliente, PeempEmplea peempEmplea, BigDecimal pevntTotven, String pevntDirent, Date pevntFecpag, String pevntTippag, String pevntTipven, Set<PedetDetalle> pedetDetalles) {
        this.pecliCliente = pecliCliente;
        this.peempEmplea = peempEmplea;
        this.pevntTotven = pevntTotven;
@@ -44,7 +44,7 @@ public class PevntVentas  implements java.io.Serializable {
        this.pevntFecpag = pevntFecpag;
        this.pevntTippag = pevntTippag;
        this.pevntTipven = pevntTipven;
-       this.pedets = pedets;
+       this.pedetDetalles = pedetDetalles;
     }
    
     public Integer getPevntNumord() {
@@ -103,12 +103,12 @@ public class PevntVentas  implements java.io.Serializable {
     public void setPevntTipven(String pevntTipven) {
         this.pevntTipven = pevntTipven;
     }
-    public Set<Pedet> getPedets() {
-        return this.pedets;
+    public Set<PedetDetalle> getPedetDetalles() {
+        return this.pedetDetalles;
     }
     
-    public void setPedets(Set<Pedet> pedets) {
-        this.pedets = pedets;
+    public void setPedetDetalles(Set<PedetDetalle> pedetDetalles) {
+        this.pedetDetalles = pedetDetalles;
     }
 
 

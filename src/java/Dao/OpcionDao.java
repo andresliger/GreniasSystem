@@ -6,6 +6,8 @@
 package Dao;
 
 import Model.SeopcOpcion;
+import Model.SeperPerfil;
+import Model.SesisSistem;
 import java.util.List;
 import org.primefaces.model.menu.DefaultSubMenu;
 import org.primefaces.model.menu.MenuModel;
@@ -25,5 +27,6 @@ public interface OpcionDao {
     public void crearItem(SeopcOpcion opcion, DefaultSubMenu submenu);
     public void crearSubSubmenu(SeopcOpcion opcion, DefaultSubMenu submenu ) ;
     public void crearSubMenuItem(int menuPosition, boolean isTheEnd, int codigoPadre, DefaultSubMenu menuModel);
+    public void asignarOpcionxPerfil(List<SeperPerfil> perfiles);
     
 }

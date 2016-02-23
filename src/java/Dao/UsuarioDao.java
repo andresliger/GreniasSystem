@@ -5,6 +5,7 @@
  */
 package Dao;
 
+import Model.SeperPerfil;
 import Model.SeusuUsuari;
 import java.util.List;
 

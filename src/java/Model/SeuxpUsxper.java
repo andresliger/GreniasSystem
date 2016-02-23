@@ -1,5 +1,5 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,18 +13,28 @@ public class SeuxpUsxper  implements java.io.Serializable {
      private SeuxpUsxperId id;
      private SeperPerfil seperPerfil;
      private SeusuUsuari seusuUsuari;
-     private Date fechaDeAsignacion;
-     private String motivoUsuPer;
+     private Date seuxpFecasi;
+     private String seuxpMotivo;
+     private Date seuxpFecfin;
 
     public SeuxpUsxper() {
     }
 
-    public SeuxpUsxper(SeuxpUsxperId id, SeperPerfil seperPerfil, SeusuUsuari seusuUsuari, Date fechaDeAsignacion, String motivoUsuPer) {
+	
+    public SeuxpUsxper(SeuxpUsxperId id, SeperPerfil seperPerfil, SeusuUsuari seusuUsuari, Date seuxpFecasi, String seuxpMotivo) {
+        this.id = id;
+        this.seperPerfil = seperPerfil;
+        this.seusuUsuari = seusuUsuari;
+        this.seuxpFecasi = seuxpFecasi;
+        this.seuxpMotivo = seuxpMotivo;
+    }
+    public SeuxpUsxper(SeuxpUsxperId id, SeperPerfil seperPerfil, SeusuUsuari seusuUsuari, Date seuxpFecasi, String seuxpMotivo, Date seuxpFecfin) {
        this.id = id;
        this.seperPerfil = seperPerfil;
        this.seusuUsuari = seusuUsuari;
-       this.fechaDeAsignacion = fechaDeAsignacion;
-       this.motivoUsuPer = motivoUsuPer;
+       this.seuxpFecasi = seuxpFecasi;
+       this.seuxpMotivo = seuxpMotivo;
+       this.seuxpFecfin = seuxpFecfin;
     }
    
     public SeuxpUsxperId getId() {
@@ -48,19 +58,26 @@ public class SeuxpUsxper  implements java.io.Serializable {
     public void setSeusuUsuari(SeusuUsuari seusuUsuari) {
         this.seusuUsuari = seusuUsuari;
     }
-    public Date getFechaDeAsignacion() {
-        return this.fechaDeAsignacion;
+    public Date getSeuxpFecasi() {
+        return this.seuxpFecasi;
     }
     
-    public void setFechaDeAsignacion(Date fechaDeAsignacion) {
-        this.fechaDeAsignacion = fechaDeAsignacion;
+    public void setSeuxpFecasi(Date seuxpFecasi) {
+        this.seuxpFecasi = seuxpFecasi;
     }
-    public String getMotivoUsuPer() {
-        return this.motivoUsuPer;
+    public String getSeuxpMotivo() {
+        return this.seuxpMotivo;
     }
     
-    public void setMotivoUsuPer(String motivoUsuPer) {
-        this.motivoUsuPer = motivoUsuPer;
+    public void setSeuxpMotivo(String seuxpMotivo) {
+        this.seuxpMotivo = seuxpMotivo;
+    }
+    public Date getSeuxpFecfin() {
+        return this.seuxpFecfin;
+    }
+    
+    public void setSeuxpFecfin(Date seuxpFecfin) {
+        this.seuxpFecfin = seuxpFecfin;
     }
 
 

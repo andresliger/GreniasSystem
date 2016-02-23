@@ -7,6 +7,7 @@ package Dao;
 
 import Model.SeperPerfil;
 import Model.SeusuUsuari;
+import Model.SeuxpUsxper;
 import java.util.List;
 
 /**
@@ -16,7 +17,8 @@ import java.util.List;
 public interface UsuarioPerfilDao {
     
     public SeperPerfil getPerfilFromUsuario(SeusuUsuari usuario);
-    public void asignarPerfilUsuario(List<SeperPerfil> perfiles, List<SeusuUsuari> usuarios);
-    public void revocarPerfilUsuario(List<SeperPerfil> perfiles, List<SeusuUsuari> usuarios);
+    public void asignarPerfilUsuario(SeuxpUsxper usuario_x_perfil);
+    public void revocarPerfilUsuario(SeuxpUsxper usuario_x_perfil) ;
+    public List<SeusuUsuari> mostrarUsuariosPorPerfil(SeperPerfil perfil);
 
 }

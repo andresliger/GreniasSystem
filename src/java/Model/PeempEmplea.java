@@ -1,8 +1,9 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,8 @@ public class PeempEmplea  implements java.io.Serializable {
      private Integer peempNumemp;
      private SeusuUsuari seusuUsuari;
      private String peempNomemp;
-     private int peempEdaemp;
+     private String cedulaEmpleado;
+     private Date peempFecnac;
      private BigDecimal peempSalemp;
      private BigDecimal peempComemp;
      private String peempOfiemp;
@@ -30,17 +32,16 @@ public class PeempEmplea  implements java.io.Serializable {
     }
 
 	
-    public PeempEmplea(SeusuUsuari seusuUsuari, String peempNomemp, int peempEdaemp, BigDecimal peempSalemp, BigDecimal peempComemp) {
+    public PeempEmplea(SeusuUsuari seusuUsuari, String peempNomemp, Date peempFecnac) {
         this.seusuUsuari = seusuUsuari;
         this.peempNomemp = peempNomemp;
-        this.peempEdaemp = peempEdaemp;
-        this.peempSalemp = peempSalemp;
-        this.peempComemp = peempComemp;
+        this.peempFecnac = peempFecnac;
     }
-    public PeempEmplea(SeusuUsuari seusuUsuari, String peempNomemp, int peempEdaemp, BigDecimal peempSalemp, BigDecimal peempComemp, String peempOfiemp, String peempTelemp, String peempCelemp, String peempEmaemp, Integer peempIndtyp, Set<PevntVentas> pevntVentases, Set<SeusuUsuari> seusuUsuaris) {
+    public PeempEmplea(SeusuUsuari seusuUsuari, String peempNomemp, String cedulaEmpleado, Date peempFecnac, BigDecimal peempSalemp, BigDecimal peempComemp, String peempOfiemp, String peempTelemp, String peempCelemp, String peempEmaemp, Integer peempIndtyp, Set<PevntVentas> pevntVentases, Set<SeusuUsuari> seusuUsuaris) {
        this.seusuUsuari = seusuUsuari;
        this.peempNomemp = peempNomemp;
-       this.peempEdaemp = peempEdaemp;
+       this.cedulaEmpleado = cedulaEmpleado;
+       this.peempFecnac = peempFecnac;
        this.peempSalemp = peempSalemp;
        this.peempComemp = peempComemp;
        this.peempOfiemp = peempOfiemp;
@@ -73,12 +74,19 @@ public class PeempEmplea  implements java.io.Serializable {
     public void setPeempNomemp(String peempNomemp) {
         this.peempNomemp = peempNomemp;
     }
-    public int getPeempEdaemp() {
-        return this.peempEdaemp;
+    public String getCedulaEmpleado() {
+        return this.cedulaEmpleado;
     }
     
-    public void setPeempEdaemp(int peempEdaemp) {
-        this.peempEdaemp = peempEdaemp;
+    public void setCedulaEmpleado(String cedulaEmpleado) {
+        this.cedulaEmpleado = cedulaEmpleado;
+    }
+    public Date getPeempFecnac() {
+        return this.peempFecnac;
+    }
+    
+    public void setPeempFecnac(Date peempFecnac) {
+        this.peempFecnac = peempFecnac;
     }
     public BigDecimal getPeempSalemp() {
         return this.peempSalemp;

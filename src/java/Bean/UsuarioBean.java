@@ -90,9 +90,11 @@ public class UsuarioBean implements Serializable {
         if (myUserDB != null) {
             if (EncryptUtil.encriptarMD5(usuario.getSeusuPasswd()).equals(myUserDB.getSeusuPasswd())) {
                 loggedIn = true;
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("remember", usuario.getSeusuLogged());
+                myUserDB.setSeusuLogged(true);
                 usuario = myUserDB;
-                usuario.setSeusuLogged(true);
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuario);
+
                 modificar();
                 message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenido", usuario.getSeusuNombre());
                 ruta = MyUtil.basePathLogin() + "View/inicio.xhtml";

@@ -12,21 +12,24 @@
         <div class="container">
             <h:form id="formLogin">
                 <p:growl id="growl" showDetail="true"/>
-                <p:panel header="Ingresar al Sistema" footer="Grenias">
+                <p:panel header="Ingresar al Sistema" footer="Grenias System">
                     <h:panelGrid columns="2" cellpadding="5">
-                        <h:outputLabel for="username" value="Username:" />
+                        <h:outputLabel for="username" value="Usuario:" />
                         <p:inputText id="username" value="#{usuarioBean.usuario.seusuNombre}" required="true" label="Usuario" />
 
-                        <h:outputLabel for="password" value="Password:" />
+                        <h:outputLabel for="password" value="Contraseña:" />
                         <p:password id="password" value="#{usuarioBean.usuario.seusuPasswd}" required="true" label="Contraseña" />
 
+                        <p:selectBooleanCheckbox itemLabel="Recordar mis datos" value="#{usuarioBean.usuario.seusuLogged}" />
+                        <p:commandButton icon="fa fa-sign-in" value="Ingresar" update="growl" actionListener="#{usuarioBean.login(event)}" oncomplete="handleLoginRequest(xhr, status, args)" />
+
                         <f:facet name="footer">
-                            <p:commandButton icon="fa fa-sign-in" value="Login" update="growl" actionListener="#{usuarioBean.login(event)}"
+                            <p:commandButton icon="fa fa-user" value="Registrarse" update="growl" actionListener="#{usuarioBean.login(event)}"
                                              oncomplete="handleLoginRequest(xhr, status, args)" />
                         </f:facet>  
                     </h:panelGrid>
                 </p:panel>
-            </h:form>
+            </h:form>            
             <script type="text/javascript">
                 function handleLoginRequest(xhr, status, args) {
                     if (args.validationFailed || !args.loggedIn) {

@@ -6,6 +6,7 @@
 package Dao;
 
 import Model.SeopcOpcion;
+import Model.SeperPerfil;
 import Persistencia.NewHibernateUtil;
 import Util.MyUtil;
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class OpcionDaoImplement implements OpcionDao {
             isTheEnd = true;
         } else {
             for (int i = 0; i < auxLista.size(); i++) {
-                if (auxLista.get(i).getSevenVentan().getCodigoVentana() == 3) { //Es hoja 
+                if (auxLista.get(i).getSevenVentan().getSevenCodigo()== 3) { //Es hoja 
                     crearItem(auxLista.get(i), (DefaultSubMenu) menuModel.getElements().get(menuPosition));
                 }
             }
@@ -88,11 +89,11 @@ public class OpcionDaoImplement implements OpcionDao {
             isTheEnd = true;
         } else {
             for (int i = 0; i < auxLista.size(); i++) {
-                if (auxLista.get(i).getSevenVentan().getCodigoVentana() == 1) { //Es raiz
+                if (auxLista.get(i).getSevenVentan().getSevenCodigo()== 1) { //Es raiz
                     //crearItem(auxLista.get(i), (DefaultSubMenu) menuModel.getElements().get(menuPosition));
                     crearSubmenu(auxLista.get(i), menuModel);
                     crearMenu(i, false, auxLista.get(i).getSeopcCodopc(), menuModel);
-                } else if (auxLista.get(i).getSevenVentan().getCodigoVentana() == 2) { //Es submenu
+                } else if (auxLista.get(i).getSevenVentan().getSevenCodigo()== 2) { //Es submenu
                     crearSubSubmenu(auxLista.get(i), (DefaultSubMenu) menuModel.getElements().get(menuPosition));
                     crearSubMenuItem(i, false, auxLista.get(i).getSeopcCodopc(),(DefaultSubMenu) menuModel.getElements().get(menuPosition));
                 } else { //Es principal
@@ -126,6 +127,12 @@ public class OpcionDaoImplement implements OpcionDao {
 
         MenuElement menuElement = new DefaultSubMenu(opcion.getSeopcNomopc());
         submenu.addElement(menuElement);        
+    }
+
+    @Override
+    public void asignarOpcionxPerfil(List<SeperPerfil> perfiles) {
+        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

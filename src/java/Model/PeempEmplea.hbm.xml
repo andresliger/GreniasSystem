@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<!-- Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Model.PeempEmplea" table="peemp_emplea" catalog="greniasdb" optimistic-lock="version">
         <id name="peempNumemp" type="java.lang.Integer">
@@ -16,18 +16,21 @@
                 <comment>Nombre del vendedor.</comment>
             </column>
         </property>
-        <property name="peempEdaemp" type="int">
-            <column name="PEEMP_EDAEMP" not-null="true">
+        <property name="cedulaEmpleado" type="string">
+            <column name="CEDULA_EMPLEADO" length="16" />
+        </property>
+        <property name="peempFecnac" type="date">
+            <column name="PEEMP_FECNAC" length="10" not-null="true">
                 <comment>Edad del vendedor.</comment>
             </column>
         </property>
         <property name="peempSalemp" type="big_decimal">
-            <column name="PEEMP_SALEMP" precision="5" not-null="true">
+            <column name="PEEMP_SALEMP" precision="5">
                 <comment>Salario o remuneraci</comment>
             </column>
         </property>
         <property name="peempComemp" type="big_decimal">
-            <column name="PEEMP_COMEMP" precision="3" not-null="true">
+            <column name="PEEMP_COMEMP" precision="3">
                 <comment>Comisi</comment>
             </column>
         </property>

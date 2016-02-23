@@ -1,25 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<!-- Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Model.SevenVentan" table="seven_ventan" catalog="greniasdb" optimistic-lock="version">
-        <id name="codigoVentana" type="java.lang.Integer">
-            <column name="CODIGO_VENTANA" />
+        <id name="sevenCodigo" type="java.lang.Integer">
+            <column name="SEVEN_CODIGO" />
             <generator class="identity" />
         </id>
-        <many-to-one name="seopcOpcion" class="Model.SeopcOpcion" fetch="select">
-            <column name="SEOPC_CODOPC" />
-        </many-to-one>
-        <property name="nombreVentana" type="string">
-            <column name="NOMBRE_VENTANA" length="256" />
+        <property name="sevenNombre" type="string">
+            <column name="SEVEN_NOMBRE" length="256" />
         </property>
-        <property name="descripcionVentana" type="string">
-            <column name="DESCRIPCION_VENTANA" length="256" />
+        <property name="seveDescri" type="string">
+            <column name="SEVE_DESCRI" length="256" not-null="true" />
         </property>
         <set name="seopcOpcions" table="seopc_opcion" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="CODIGO_VENTANA" />
+                <column name="SEVEN_CODIGO" />
             </key>
             <one-to-many class="Model.SeopcOpcion" />
         </set>

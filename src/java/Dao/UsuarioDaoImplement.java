@@ -5,6 +5,7 @@
  */
 package Dao;
 
+import Model.SeperPerfil;
 import Model.SeusuUsuari;
 import Persistencia.NewHibernateUtil;
 import java.util.List;

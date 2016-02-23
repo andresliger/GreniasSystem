@@ -24,6 +24,7 @@ public class AuthorizationListener implements PhaseListener {
         FacesContext facesContext = event.getFacesContext();
         String currentPage = facesContext.getViewRoot().getViewId();
         boolean isLoginPage = (currentPage.lastIndexOf("index.xhtml") > -1) ? true : false;
+        boolean isRememeberLogin = false;
         HttpSession sesion = (HttpSession) facesContext.getExternalContext().getSession(true);
         SeusuUsuari usuario = (SeusuUsuari) sesion.getAttribute("usuario");
 
@@ -36,7 +37,8 @@ public class AuthorizationListener implements PhaseListener {
                 nh.handleNavigation(facesContext, null, "/View/inicio.xhtml");
             }
         } else if (!isLoginPage && usuario != null) {
-            if (!usuario.getSeusuLogged()) {
+            isRememeberLogin = (Boolean) sesion.getAttribute("remember");
+            if (!isRememeberLogin && !usuario.getSeusuLogged()) {
                 NavigationHandler nh = facesContext.getApplication().getNavigationHandler();
                 nh.handleNavigation(facesContext, null, "/index.xhtml");
             }

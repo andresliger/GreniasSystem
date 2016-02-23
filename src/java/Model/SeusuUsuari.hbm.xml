@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11/02/2016 9:53:58 by Hibernate Tools 4.3.1 -->
+<!-- Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Model.SeusuUsuari" table="seusu_usuari" catalog="greniasdb" optimistic-lock="version">
         <id name="seusuNombre" type="string">
@@ -25,8 +25,8 @@
         <property name="seusuCreaci" type="timestamp">
             <column name="SEUSU_CREACI" length="19" not-null="true" />
         </property>
-        <property name="seusuLogged" type="boolean">
-            <column name="SEUSU_LOGGED" not-null="true"/>
+        <property name="seusuLogged" type="java.lang.Boolean">
+            <column name="SEUSU_LOGGED" />
         </property>
         <set name="peempEmpleas" table="peemp_emplea" inverse="true" lazy="true" fetch="select">
             <key>

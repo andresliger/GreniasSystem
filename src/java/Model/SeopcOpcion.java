@@ -1,5 +1,5 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class SeopcOpcion  implements java.io.Serializable {
 
 
-     private Integer seopcCodopc;
+     private int seopcCodopc;
      private SeopcOpcion seopcOpcion;
      private SesisSistem sesisSistem;
      private SevenVentan sevenVentan;
@@ -19,16 +19,18 @@ public class SeopcOpcion  implements java.io.Serializable {
      private String seopcDesopc;
      private Set<SeopcOpcion> seopcOpcions = new HashSet<SeopcOpcion>(0);
      private Set<SeoppOpcper> seoppOpcpers = new HashSet<SeoppOpcper>(0);
-     private Set<SevenVentan> sevenVentans = new HashSet<SevenVentan>(0);
 
     public SeopcOpcion() {
     }
 
 	
-    public SeopcOpcion(String seopcNomopc) {
+    public SeopcOpcion(int seopcCodopc, SesisSistem sesisSistem, String seopcNomopc) {
+        this.seopcCodopc = seopcCodopc;
+        this.sesisSistem = sesisSistem;
         this.seopcNomopc = seopcNomopc;
     }
-    public SeopcOpcion(SeopcOpcion seopcOpcion, SesisSistem sesisSistem, SevenVentan sevenVentan, String seopcNomopc, String seopcDesopc, Set<SeopcOpcion> seopcOpcions, Set<SeoppOpcper> seoppOpcpers, Set<SevenVentan> sevenVentans) {
+    public SeopcOpcion(int seopcCodopc, SeopcOpcion seopcOpcion, SesisSistem sesisSistem, SevenVentan sevenVentan, String seopcNomopc, String seopcDesopc, Set<SeopcOpcion> seopcOpcions, Set<SeoppOpcper> seoppOpcpers) {
+       this.seopcCodopc = seopcCodopc;
        this.seopcOpcion = seopcOpcion;
        this.sesisSistem = sesisSistem;
        this.sevenVentan = sevenVentan;
@@ -36,14 +38,13 @@ public class SeopcOpcion  implements java.io.Serializable {
        this.seopcDesopc = seopcDesopc;
        this.seopcOpcions = seopcOpcions;
        this.seoppOpcpers = seoppOpcpers;
-       this.sevenVentans = sevenVentans;
     }
    
-    public Integer getSeopcCodopc() {
+    public int getSeopcCodopc() {
         return this.seopcCodopc;
     }
     
-    public void setSeopcCodopc(Integer seopcCodopc) {
+    public void setSeopcCodopc(int seopcCodopc) {
         this.seopcCodopc = seopcCodopc;
     }
     public SeopcOpcion getSeopcOpcion() {
@@ -94,13 +95,6 @@ public class SeopcOpcion  implements java.io.Serializable {
     
     public void setSeoppOpcpers(Set<SeoppOpcper> seoppOpcpers) {
         this.seoppOpcpers = seoppOpcpers;
-    }
-    public Set<SevenVentan> getSevenVentans() {
-        return this.sevenVentans;
-    }
-    
-    public void setSevenVentans(Set<SevenVentan> sevenVentans) {
-        this.sevenVentans = sevenVentans;
     }
 
 

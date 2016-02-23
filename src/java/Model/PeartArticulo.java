@@ -1,5 +1,5 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -12,36 +12,38 @@ import java.util.Set;
 public class PeartArticulo  implements java.io.Serializable {
 
 
-     private Integer peartNumart;
+     private int peartNumart;
      private String peartNomart;
      private String peartDescri;
      private BigDecimal peartPreart;
      private int peartCantid;
-     private Set<Pedet> pedets = new HashSet<Pedet>(0);
+     private Set<PedetDetalle> pedetDetalles = new HashSet<PedetDetalle>(0);
 
     public PeartArticulo() {
     }
 
 	
-    public PeartArticulo(String peartNomart, String peartDescri, BigDecimal peartPreart, int peartCantid) {
+    public PeartArticulo(int peartNumart, String peartNomart, String peartDescri, BigDecimal peartPreart, int peartCantid) {
+        this.peartNumart = peartNumart;
         this.peartNomart = peartNomart;
         this.peartDescri = peartDescri;
         this.peartPreart = peartPreart;
         this.peartCantid = peartCantid;
     }
-    public PeartArticulo(String peartNomart, String peartDescri, BigDecimal peartPreart, int peartCantid, Set<Pedet> pedets) {
+    public PeartArticulo(int peartNumart, String peartNomart, String peartDescri, BigDecimal peartPreart, int peartCantid, Set<PedetDetalle> pedetDetalles) {
+       this.peartNumart = peartNumart;
        this.peartNomart = peartNomart;
        this.peartDescri = peartDescri;
        this.peartPreart = peartPreart;
        this.peartCantid = peartCantid;
-       this.pedets = pedets;
+       this.pedetDetalles = pedetDetalles;
     }
    
-    public Integer getPeartNumart() {
+    public int getPeartNumart() {
         return this.peartNumart;
     }
     
-    public void setPeartNumart(Integer peartNumart) {
+    public void setPeartNumart(int peartNumart) {
         this.peartNumart = peartNumart;
     }
     public String getPeartNomart() {
@@ -72,12 +74,12 @@ public class PeartArticulo  implements java.io.Serializable {
     public void setPeartCantid(int peartCantid) {
         this.peartCantid = peartCantid;
     }
-    public Set<Pedet> getPedets() {
-        return this.pedets;
+    public Set<PedetDetalle> getPedetDetalles() {
+        return this.pedetDetalles;
     }
     
-    public void setPedets(Set<Pedet> pedets) {
-        this.pedets = pedets;
+    public void setPedetDetalles(Set<PedetDetalle> pedetDetalles) {
+        this.pedetDetalles = pedetDetalles;
     }
 
 

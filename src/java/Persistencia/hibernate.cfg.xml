@@ -11,7 +11,7 @@
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="Model/PevntVentas.hbm.xml"/>
     <mapping resource="Model/PeempEmplea.hbm.xml"/>
-    <mapping resource="Model/Pedet.hbm.xml"/>
+    <mapping resource="Model/PedetDetalle.hbm.xml"/>
     <mapping resource="Model/SeoppOpcper.hbm.xml"/>
     <mapping resource="Model/SeusuUsuari.hbm.xml"/>
     <mapping resource="Model/SevenVentan.hbm.xml"/>

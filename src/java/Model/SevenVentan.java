@@ -1,5 +1,5 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,49 +11,44 @@ import java.util.Set;
 public class SevenVentan  implements java.io.Serializable {
 
 
-     private Integer codigoVentana;
-     private SeopcOpcion seopcOpcion;
-     private String nombreVentana;
-     private String descripcionVentana;
+     private Integer sevenCodigo;
+     private String sevenNombre;
+     private String seveDescri;
      private Set<SeopcOpcion> seopcOpcions = new HashSet<SeopcOpcion>(0);
 
     public SevenVentan() {
     }
 
-    public SevenVentan(SeopcOpcion seopcOpcion, String nombreVentana, String descripcionVentana, Set<SeopcOpcion> seopcOpcions) {
-       this.seopcOpcion = seopcOpcion;
-       this.nombreVentana = nombreVentana;
-       this.descripcionVentana = descripcionVentana;
+	
+    public SevenVentan(String seveDescri) {
+        this.seveDescri = seveDescri;
+    }
+    public SevenVentan(String sevenNombre, String seveDescri, Set<SeopcOpcion> seopcOpcions) {
+       this.sevenNombre = sevenNombre;
+       this.seveDescri = seveDescri;
        this.seopcOpcions = seopcOpcions;
     }
    
-    public Integer getCodigoVentana() {
-        return this.codigoVentana;
+    public Integer getSevenCodigo() {
+        return this.sevenCodigo;
     }
     
-    public void setCodigoVentana(Integer codigoVentana) {
-        this.codigoVentana = codigoVentana;
+    public void setSevenCodigo(Integer sevenCodigo) {
+        this.sevenCodigo = sevenCodigo;
     }
-    public SeopcOpcion getSeopcOpcion() {
-        return this.seopcOpcion;
-    }
-    
-    public void setSeopcOpcion(SeopcOpcion seopcOpcion) {
-        this.seopcOpcion = seopcOpcion;
-    }
-    public String getNombreVentana() {
-        return this.nombreVentana;
+    public String getSevenNombre() {
+        return this.sevenNombre;
     }
     
-    public void setNombreVentana(String nombreVentana) {
-        this.nombreVentana = nombreVentana;
+    public void setSevenNombre(String sevenNombre) {
+        this.sevenNombre = sevenNombre;
     }
-    public String getDescripcionVentana() {
-        return this.descripcionVentana;
+    public String getSeveDescri() {
+        return this.seveDescri;
     }
     
-    public void setDescripcionVentana(String descripcionVentana) {
-        this.descripcionVentana = descripcionVentana;
+    public void setSeveDescri(String seveDescri) {
+        this.seveDescri = seveDescri;
     }
     public Set<SeopcOpcion> getSeopcOpcions() {
         return this.seopcOpcions;

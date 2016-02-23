@@ -1,5 +1,5 @@
 package Model;
-// Generated 11/02/2016 9:53:56 by Hibernate Tools 4.3.1
+// Generated 19/02/2016 10:05:19 by Hibernate Tools 4.3.1
 
 
 
@@ -11,13 +11,15 @@ public class SeuxpUsxperId  implements java.io.Serializable {
 
      private String seusuNombre;
      private int seperCodper;
+     private int seuxpCodigo;
 
     public SeuxpUsxperId() {
     }
 
-    public SeuxpUsxperId(String seusuNombre, int seperCodper) {
+    public SeuxpUsxperId(String seusuNombre, int seperCodper, int seuxpCodigo) {
        this.seusuNombre = seusuNombre;
        this.seperCodper = seperCodper;
+       this.seuxpCodigo = seuxpCodigo;
     }
    
     public String getSeusuNombre() {
@@ -34,6 +36,13 @@ public class SeuxpUsxperId  implements java.io.Serializable {
     public void setSeperCodper(int seperCodper) {
         this.seperCodper = seperCodper;
     }
+    public int getSeuxpCodigo() {
+        return this.seuxpCodigo;
+    }
+    
+    public void setSeuxpCodigo(int seuxpCodigo) {
+        this.seuxpCodigo = seuxpCodigo;
+    }
 
 
    public boolean equals(Object other) {
@@ -43,7 +52,8 @@ public class SeuxpUsxperId  implements java.io.Serializable {
 		 SeuxpUsxperId castOther = ( SeuxpUsxperId ) other; 
          
 		 return ( (this.getSeusuNombre()==castOther.getSeusuNombre()) || ( this.getSeusuNombre()!=null && castOther.getSeusuNombre()!=null && this.getSeusuNombre().equals(castOther.getSeusuNombre()) ) )
- && (this.getSeperCodper()==castOther.getSeperCodper());
+ && (this.getSeperCodper()==castOther.getSeperCodper())
+ && (this.getSeuxpCodigo()==castOther.getSeuxpCodigo());
    }
    
    public int hashCode() {
@@ -51,6 +61,7 @@ public class SeuxpUsxperId  implements java.io.Serializable {
          
          result = 37 * result + ( getSeusuNombre() == null ? 0 : this.getSeusuNombre().hashCode() );
          result = 37 * result + this.getSeperCodper();
+         result = 37 * result + this.getSeuxpCodigo();
          return result;
    }   
 
